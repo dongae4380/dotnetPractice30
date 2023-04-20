@@ -44,11 +44,22 @@ class SolutionDay2
 {
     public static void Main(string[] args)
     {
-        double meal_cost = Convert.ToDouble(Console.ReadLine().Trim());
+        // Read inputs
+        string[] inputs = new string[3];
+        for (int idx = 0; idx < 3; idx++)
+        {
+            inputs[idx] = Console.ReadLine() ?? "";
+        }
 
-        int tip_percent = Convert.ToInt32(Console.ReadLine().Trim());
+        if (inputs.Any(string.IsNullOrEmpty))
+        {
+            Console.WriteLine("Please provide inputs correctly.");
+            return;
+        }
 
-        int tax_percent = Convert.ToInt32(Console.ReadLine().Trim());
+        double meal_cost = Convert.ToDouble(inputs[0].Trim());
+        int tip_percent = Convert.ToInt32(inputs[1].Trim());
+        int tax_percent = Convert.ToInt32(inputs[2].Trim());
 
         Result.solve(meal_cost, tip_percent, tax_percent);
     }

@@ -9,8 +9,7 @@ using System.IO;
 
 class SolutionDay0 {
     static void Main(String[] args) {
-        String inputString; 
-        inputString = Console.ReadLine(); 
+        string? inputString = Console.ReadLine(); 
         
         // Write lines
         Console.WriteLine("Hello, World.");
